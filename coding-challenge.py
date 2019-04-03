@@ -107,4 +107,4 @@ def user_input():
 	regex = input("Enter regex to search: ")
 	file_search(os.path.join(os.getcwd(), mypath+'/'),regex)
 
-test5()
+user_input()
