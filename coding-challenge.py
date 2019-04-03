@@ -32,6 +32,7 @@ def test1():
 		f = open(mypath+str('hello'+str(i)+'.txt'),'w')
 		f.close()
 		f = open(mypath+str('bye'+str(i)+'.txt'),'w')
+		f.close()
 	files = file_search(mypath,'hello')
 	print(files)
 
@@ -47,6 +48,7 @@ def test2():
 		f = open(mypath+str('goodbye'+str(i)+'.txt'),'w')
 		f.close()
 		f = open(mypath+str('bye'+str(i)+'.txt'),'w')
+		f.close()
 	files = file_search(mypath,'hello')
 	print(files)
 
@@ -70,6 +72,31 @@ def test4():
 		f = open(mypath+str(str(i)+'hello'+'.txt'),'w')
 		f.close()
 		f = open(mypath+str(str(i)+'bye'+'.txt'),'w')
+		f.close()
+	files = file_search(mypath,'hello')
+	print(files)
+
+def test5():
+	'''This test case tests finding files matching the regex when there 
+	are many files.
+	'''
+	mypath = os.path.join(os.getcwd(), 'test5/')
+	if not os.path.isdir(mypath):
+		os.mkdir(mypath)
+	f = open(mypath+str('hello56'+'.txt'),'w')
+	f.close()
+		#create files in directory
+	for i in range(100):
+		f = open(mypath+str(str(i)+'bye'+'.txt'),'w')
+		f.close()
+		f = open(mypath+str(str(i)+'what'+'.txt'),'w')
+		f.close()
+		f = open(mypath+str(str(i)+'ok'+'.txt'),'w')
+		f.close()
+		f = open(mypath+str(str(i)+'hasta'+'.txt'),'w')
+		f.close()
+		f = open(mypath+str(str(i)+'lavista'+'.txt'),'w')
+		f.close()
 	files = file_search(mypath,'hello')
 	print(files)
 
@@ -80,4 +107,4 @@ def user_input():
 	regex = input("Enter regex to search: ")
 	file_search(os.path.join(os.getcwd(), mypath+'/'),regex)
 
-user_input()
+test5()
