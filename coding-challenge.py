@@ -101,6 +101,14 @@ def test5():
 	files = file_search(mypath,'hello')
 	print(files)
 
+def test6():
+	'''This test case tests if the directory is empty'''
+	mypath = os.path.join(os.getcwd(), 'test6/')
+	if not os.path.isdir(mypath):
+		os.mkdir(mypath)
+	files = file_search(mypath,'hello')
+	print(files)
+
 
 def user_input():
 	start_time = time.time()
