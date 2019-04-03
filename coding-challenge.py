@@ -1,6 +1,7 @@
 import os
 from os import listdir
 from os.path import isfile, join
+import time
 
 def file_search(mypath, regex):
 	''' This is a function to find all files in a directory containing a certain regex
@@ -102,9 +103,12 @@ def test5():
 
 
 def user_input():
+	start_time = time.time()
 	mypath = input("Enter directory to search: ") # find directory desired
 	#criteria = raw_input("")
 	regex = input("Enter regex to search: ")
-	file_search(os.path.join(os.getcwd(), mypath+'/'),regex)
+	files = file_search(os.path.join(os.getcwd(), mypath+'/'),regex)
+	print('The files matching this regex are '+str(files))
+	print('The run time is '+ str(time.time() - start_time)+ ' seconds')
 
 user_input()
